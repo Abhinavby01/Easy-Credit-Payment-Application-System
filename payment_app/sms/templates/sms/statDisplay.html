@@ -1,0 +1,63 @@
+<style>
+    *{
+        background-color : #ccdcff;
+    }
+    div.scroll {
+        border: 12px solid white;
+        margin: 4px, 4px;
+        width: 80%;
+        height: 90%;
+        overflow-x: auto;
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+    .button {
+        font: bold 20px Arial;
+        text-decoration: none;
+        background-color: green;
+        color:white;
+        padding: 2px 6px 2px 6px;
+        border-top: 3px solid #333333;
+        border-right: 3px solid #333333;
+        border-bottom: 3px solid #333333;
+        border-left: 3px solid #333333;
+        right : 0;
+      }  
+</style>
+
+<span style = "display:table;margin:0 auto;"><h1> Statements  of {{ res.email }} </h1></span>
+
+
+<form  method="POST" action ="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div style ="margin-bottom: 10px;  margin-top: 40px"> 
+        <span style="display:inline; font-size:30px"><b>Statement Page 1</b></span>
+        </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.statementPageOne.url}}" alt="pageOne">
+    </div>
+    <div > 
+        <div style ="margin-bottom: 10px; margin-top: 50px"> 
+            <span style="display:inline; font-size:30px"><b>Statement Page 2</b></span>
+            </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.statementPageTwo.url }}" alt="pageTwo">
+    </div>
+    <div style ="margin-bottom: 10px; margin-top: 50px"> 
+        <span style="display:inline; font-size:30px"><b>Statement Page 3</b></span>
+    </div> 
+    <div class="scroll">
+    <img class="a" src= "{{ res.statementPageThree.url }}" alt="pageThree">
+</div>
+    <div style ="margin-bottom: 10px;  margin-top: 40px"> 
+    <span style="display:inline; font-size:30px"><b>Loan Status </b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name = "loan-status">
+        <option value="approved"><b>Approved</b></option>
+        <option value="rejected"><b>Rejected</b></option>
+        <option value="rejected"><b>Statements not clear</b></option>
+    </select>
+    </div> 
+     
+ <input type="submit" class = "button" name = "submit"> 
+
+</form>

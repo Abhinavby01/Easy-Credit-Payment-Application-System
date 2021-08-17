@@ -1,0 +1,81 @@
+<style>
+    *{
+        background-color : #ccdcff;
+    }
+    div.scroll {
+        border: 12px solid white;
+        margin: 4px, 4px;
+        width: 80%;
+        height: 90%;
+        overflow-x: auto;
+        overflow-y: auto;
+        white-space: nowrap;
+    }
+    .button {
+        font: bold 20px Arial;
+        text-decoration: none;
+        background-color: green;
+        color:white;
+        padding: 2px 6px 2px 6px;
+        border-top: 3px solid #333333;
+        border-right: 3px solid #333333;
+        border-bottom: 3px solid #333333;
+        border-left: 3px solid #333333;
+        right : 0;
+      }  
+</style>
+
+<span style = "display:table;margin:0 auto;"><h1> KYC Docs of {{ res.email }} </h1></span>
+
+
+<form action="">
+    <div style ="margin-bottom: 10px;  margin-top: 40px"> 
+        <span style="display:inline; font-size:30px"><b>POI</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="display:inline;"><a href='{% url "reupload" cx.id "poi" %}' class ="button">Reupload</a></span>
+        </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.poi.url}}" alt="poi">
+    </div>
+    <div > 
+        <div style ="margin-bottom: 10px; margin-top: 50px"> 
+            <span style="display:inline; font-size:30px"><b>POA FRONT</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="display:inline;"><a href='{% url "reupload" cx.id "poaFront" %}' class ="button">Reupload</a></span>
+            </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.poaFront.url }}" alt="poa front"></div>
+    <div style ="margin-bottom: 10px; margin-top: 50px"> 
+        <span style="display:inline; font-size:30px"><b>POA BACK</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="display:inline;"><a href='{% url "reupload" cx.id "poaBack" %}' class ="button">Reupload</a></span>
+        </div> 
+    <div class="scroll">
+    <img class="a" src= "{{ res.poaBack.url }}" alt="poa back"></div>
+    <div style ="margin-bottom: 10px; margin-top: 50px"> 
+        <span style="display:inline; font-size:30px"><b>Live Pic</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="display:inline;"><a href='{% url "reupload" cx.id "livePic" %}' class ="button">Reupload</a></span>
+        </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.livePic.url }}" alt="live pic"></div>
+    <div style ="margin-bottom: 10px; margin-top: 50px"> 
+        <span style="display:inline; font-size:30px"><b>Bank Proof</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="display:inline;"><a href='{% url "reupload" cx.id "bankProof" %}' class ="button">Reupload</a></span>
+        </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.bankProof.url }}" alt = "bank proof"></div>
+    <div style ="margin-bottom: 10px; margin-top: 50px"> 
+        <span style="display:inline; font-size:30px"><b>Nach Mandate</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="display:inline;"><a href='{% url "reupload" cx.id "nachMandate" %}' class ="button">Reupload</a></span>
+        </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.nachMandate.url }}" alt="nach mandate"></div>
+    <div style ="margin-bottom: 10px; margin-top: 50px"> 
+        <span style="display:inline; font-size:30px"><b>Loan Agreement</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="display:inline;"><a href='{% url "reupload" cx.id "loanAgreement" %}' class ="button">Reupload</a></span>
+        </div> 
+    <div class="scroll">
+    <img class="a" src="{{ res.loanAgreement.url }}" alt="loan agreement"></div>
+</form>
+
+<div style ="margin-bottom: 10px; margin-top: 50px"> 
+    <span style="display:inline;"><a href='{% url "display" cx.id %}' class ="button">Refresh</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span style="display:inline;"><a href='{% url "softApproved" %}' class ="button">Submit</a></span>
+    </div> 
